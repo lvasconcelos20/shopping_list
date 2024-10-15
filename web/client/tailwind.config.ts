@@ -56,7 +56,11 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		fontFamily: {
+			inter: ['Inter', 'sans-serif']
+		}
+
   	},
 	spacing: {
 		'20': '1.667rem',
@@ -73,6 +77,16 @@ const config: Config = {
 		'280': '23.333rem',
 		'326': '26rem',
 		'360': '30rem',
+
+
+	},
+	margin: {
+		'1': '0.083rem',
+		'5': '0.417rem',
+		'8': '0.667rem',
+		'10': '0.833rem',
+		'15': '1.25rem',
+		'20': '1.667rem'
 
 
 	}
