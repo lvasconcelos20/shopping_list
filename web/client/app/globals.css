@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --citi: #00ff00;
+  --background: #00ff00;
 }
 
 body {
