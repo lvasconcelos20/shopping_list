@@ -89,8 +89,18 @@ const config: Config = {
 		'20': '1.667rem'
 
 
+	},
+	gap: {
+		'4': '0.333rem',
+		'11': '0.917rem',
+		'12': '1rem',
+		'15': '1.25rem',
+		'20': '1.667rem'
+	},
+	padding:{
+		'4': '0.333rem',
+		'10': '0.833rem'
 	}
-	
   },
   plugins: [require("tailwindcss-animate")],
 };
