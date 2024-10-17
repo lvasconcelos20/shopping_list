@@ -1,44 +1,20 @@
 
+import express from 'express'
 
-import express from 'express';
-import cors from 'cors'; 
-import dotenv from 'dotenv'; 
-import './database';
-import { memberRouter, tarefaRouter, authRouter } from './routes';
+import { Router, Request, Response } from 'express';
 
-
-dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3002; 
 
-app.use(cors({
-  origin: 'http://localhost:3000', 
-  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-})); 
+const route = Router()
 
-app.use(express.json());
-app.use('/', authRouter)
-app.use('/member', memberRouter);
-app.use('/tarefa', tarefaRouter);
-app.get('/', (req, res) => {
-  res.send('Servidor conectado com sucesso!');
-});
+app.use(express.json())
+
+route.get('/', (req: Request, res: Response) => {
+  res.json({ message: 'Banco de dados rodando' })
+})
+
+app.use(route)
 
 
-app.post('/tarefa', async (req, res, next) => {
-  try {
-    const tarefa = req.body;
-    res.status(201).json({message: 'Tarefa criada com sucesso.',
-      tarefa
-    });
-  } catch (error) {
-    next(error);
-  }
-});
-
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server Rodando na porta http://localhost:${PORT}`);
-});
+app.listen(3333, () => 'server running on port 3333')
 

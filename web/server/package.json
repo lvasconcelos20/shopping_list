@@ -1,34 +1,17 @@
 {
-  "name": "testt",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/lvasconcelos20/testt.git",
-  "author": "Felipe Vasconcelos <lipevasconcelos20@gmail.com>",
-  "license": "MIT",
+  "name": "server",
+  "packageManager": "yarn@3.6.4",
   "dependencies": {
-    "@prisma/client": "^5.15.0",
-    "@types/jws": "^3.2.10",
-    "axios": "^1.7.2",
-    "bcrypt": "^5.1.1",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "jws": "^4.0.0",
-    "zod": "^3.23.8"
+    "@prisma/client": "^5.21.0",
+    "express": "^4.21.1"
   },
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch  node_modules --respawn src/server.ts"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsc"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/jsonwebtoken": "^9.0.6",
-    "@types/node": "^20.16.12",
+    "@types/express": "^5.0.0",
     "prisma": "^5.21.0",
-    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
   }
