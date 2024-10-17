@@ -16,19 +16,11 @@ import { Checkbox } from '@radix-ui/react-checkbox';
 
 
 export default function Home() {
-  const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
 
   const items = [
     { name: 'Maçã', quantity: '2 unidades', category: 'fruta', icon: '🍎', color: 'bg-red-500' },
     { name: 'Pão francês', quantity: '4 unidades', category: 'padaria', icon: '🥖', color: 'bg-yellow-500' },
   ];
-
-  const handleCheckboxChange = (index: number) => {
-    setCheckedItems((prev: any[]) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
 
   return (
     <div  className="bg-[#0C0C0D] font-inter flex justify-center items-center">
@@ -115,15 +107,15 @@ export default function Home() {
             >
               <div className="flex items-center gap-4">
                 <Checkbox
-                  checked={!!checkedItems[index]}
-                  onCheckedChange={() => handleCheckboxChange(index)}
+                 
+
                   className="w-4 h-4 bg-white border border-gray-400 rounded-sm checked:bg-purple-600"
                 />
                 <div>
-                  <h3 className={`text-white font-bold ${checkedItems[index] ? 'line-through text-gray-500' : ''}`}>
+                  <h3 className={`text-white font-bold  'line-through text-gray-500' : ''}`}>
                     {item.name}
                   </h3>
-                  <p className={`text-xs text-gray-400 ${checkedItems[index] ? 'line-through text-gray-500' : ''}`}>
+                  <p className={`text-xs text-gray-400 'line-through text-gray-500' : ''}`}>
                     {item.quantity}
                   </p>
                 </div>
@@ -145,7 +137,5 @@ export default function Home() {
     
   )
 }
-function useState<T>(arg0: {}): [any, any] {
-  throw new Error('Function not implemented.')
-}
+
 
