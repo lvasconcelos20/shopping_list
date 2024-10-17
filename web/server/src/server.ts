@@ -1,20 +1,15 @@
+import dotenv from 'dotenv';
+dotenv.config(); // Carrega as variáveis do .env
 
-import express from 'express'
-
-import { Router, Request, Response } from 'express';
+import express from 'express';
+import listRouter from './routes/ListRoutes';
 
 const app = express();
+const PORT = process.env.SERVER_PORT || 3003;
 
-const route = Router()
+app.use(express.json());
+app.use('/list', listRouter);
 
-app.use(express.json())
-
-route.get('/', (req: Request, res: Response) => {
-  res.json({ message: 'Banco de dados rodando' })
-})
-
-app.use(route)
-
-
-app.listen(3333, () => 'server running on port 3333')
-
+app.listen(PORT, () => {
+  console.log(`🚀 Server ready at http://localhost:${PORT}`);
+});
