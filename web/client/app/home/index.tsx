@@ -1,10 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
+import { Tag } from '@/components/tag'
 import { Background } from '../assets'
 import { Label } from '@radix-ui/react-label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import Checkbox from '@mui/material/Checkbox';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 
 import {
   Select,
@@ -98,7 +101,7 @@ export default function Home() {
         </form>
 
         {/* Lista de Itens */}
-        <ul className="mt-30 flex flex-col gap-15">
+        <ul className="mt-[40px] flex flex-col gap-15">
           {items.map((item, index) => (
             <li
               key={index}
@@ -109,11 +112,17 @@ export default function Home() {
                 <div>
                   <h3 className="text-white font-bold">{item.name}</h3>
                   <p className="text-xs text-gray-400">{item.quantity}</p>
+              
+
                 </div>
               </div>
-              <span className={`text-lg ${item.color} p-2 rounded-full`}>
+              <span className={`text-lg ${item.color}  rounded-full`}>
                 {item.icon}
               </span>
+              <button>
+                <MoreVertIcon style={{color: 'rgba(168, 129, 230, 1)'}} />
+              </button>
+              
             </li>
           ))}
         </ul>
@@ -121,3 +130,6 @@ export default function Home() {
     </div>
   )
 }
+
+
+
