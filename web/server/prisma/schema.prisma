@@ -13,10 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Unidade {
+ Un
+ Kg
+ L
+}
+
 model List {
   id           Int      @id @default(autoincrement())
   name         String
   quantidade   Int
   categoria    String
+  unidade_medida      Unidade
   createdAt    DateTime @default(now())
 }

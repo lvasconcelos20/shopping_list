@@ -4,9 +4,10 @@ import { Sandwich, Carrot,  Milk, Apple,  Beef } from 'lucide-react';
 interface TagProps {
   label: string;
   type: string; 
+  done: boolean;
 }
 
-const Tag: React.FC<TagProps> = ({ label, type }) => {
+const Tag: React.FC<TagProps> = ({ label, type, done }) => {
   // Definindo o ícone e a cor com base no tipo
   const getIconAndColor = () => {
     switch (type) {
@@ -24,7 +25,7 @@ const Tag: React.FC<TagProps> = ({ label, type }) => {
         };
       case 'fruta':
           return {
-            icon: <Apple  className="w-[16px] h-[16px] text-green-500" />,
+            icon: <Apple  className="w-[16px] h-[16px] text-red-400" />,
             backgroundColor: 'rgba(38, 26, 23, 1)',
             color: 'text-red-400'
           };
@@ -36,7 +37,7 @@ const Tag: React.FC<TagProps> = ({ label, type }) => {
             };
           case 'carne':
             return {
-                icon: <Beef className="w-[16px] h-[16px] text-green-500" />,
+                icon: <Beef className="w-[16px] h-[16px] text-pink-400" />,
                 backgroundColor: 'rgba(37, 22, 34, 1)',
                 color: 'text-pink-400'
               };
@@ -53,7 +54,7 @@ const Tag: React.FC<TagProps> = ({ label, type }) => {
 
   return (
     <div
-      className="flex justify-center items-center"
+      className={`flex justify-center items-center ${done ? 'opacity-50' : 'opacity-100'} `}
       style={{
         width: '100px',
         height: '32px',

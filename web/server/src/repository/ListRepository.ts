@@ -7,8 +7,8 @@ class ListRepository {
         return list
     }
     async findById(id: number): Promise<List | null> {
-        const user = await prisma.list.findUnique({ where: { id } });
-        return user;
+        const list = await prisma.list.findUnique({ where: { id } });
+        return list;
       }
       async findAll(): Promise<List[]> {
         return await prisma.list.findMany(); // Retorna todos os itens da lista
@@ -20,8 +20,8 @@ class ListRepository {
     }
 
     async delete(id: number): Promise<List> {
-        const user = await prisma.list.delete({ where: { id } });
-        return user;
+        const list = await prisma.list.delete({ where: { id } });
+        return list;
       }
     
 }
