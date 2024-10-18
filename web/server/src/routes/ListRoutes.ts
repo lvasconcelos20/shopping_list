@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { ListController } from '../controllers'; // Importação correta
+import { ListController } from '../controllers';
 
 const listRouter = Router();
 

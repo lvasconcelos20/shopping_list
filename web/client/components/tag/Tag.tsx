@@ -24,7 +24,7 @@ const Tag: React.FC<TagProps> = ({ label, type }) => {
         };
       case 'fruta':
           return {
-            icon: <Apple  className="w-[16px] h-[16px] text-green-500" />,
+            icon: <Apple  className="w-[16px] h-[16px] text-red-400" />,
             backgroundColor: 'rgba(38, 26, 23, 1)',
             color: 'text-red-400'
           };
@@ -36,7 +36,7 @@ const Tag: React.FC<TagProps> = ({ label, type }) => {
             };
           case 'carne':
             return {
-                icon: <Beef className="w-[16px] h-[16px] text-green-500" />,
+                icon: <Beef className="w-[16px] h-[16px] text-pink-400" />,
                 backgroundColor: 'rgba(37, 22, 34, 1)',
                 color: 'text-pink-400'
               };
