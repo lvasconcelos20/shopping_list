@@ -1,54 +1,66 @@
 import styled from 'styled-components/native';
 
+
+interface ItemContainerProps {
+  done: boolean;
+}
+
+
 export const Container = styled.View`
-  flex: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
   background-color: #0c0c0d;
   align-items: center;
-  justify-content: center;
+
 `;
 
 export const Header = styled.View`
-  width: 100%;
-  height: 200px;
+  display: flex;
+  width: 428px;
+  height: 182px;
   align-items: center;
   justify-content: center;
 `;
 
 export const BackgroundImage = styled.Image`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 428px;
+  height: 182px;
 `;
 
 export const Title = styled.Text`
   color: #fff;
   font-size: 24px;
   font-weight: bold;
+  width: 380px;
+  height: 24px;
 `;
 
 export const Form = styled.View`
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 20px;
+  position:row;
+  display: flex;
+  width: 100%;
   gap: 10px;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-around;
+
 `;
 
 export const StyledInput = styled.TextInput`
-  width: 150px;
   height: 40px;
   background-color: rgba(17, 17, 18, 1);
   border: 1px solid rgba(37, 37, 41, 1);
   color: #ddd;
-  padding: 5px;
-  border-radius: 6px;
 `;
 
 export const Select = styled.TouchableOpacity`
-  width: 100px;
+  width: 120px;
   height: 40px;
   background-color: rgba(23, 23, 26, 1);
   border: 1px solid rgba(37, 37, 41, 1);
-  border-radius: 6px;
+  border-radius: 6px 6px 6px 6px;
   align-items: center;
   justify-content: center;
 `;
@@ -56,7 +68,6 @@ export const Select = styled.TouchableOpacity`
 export const SelectText = styled.Text`
   color: #ddd;
 `;
-
 export const AddButton = styled.TouchableOpacity`
   width: 40px;
   height: 40px;
@@ -66,7 +77,7 @@ export const AddButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
-export const ItemContainer = styled.View`
+export const ItemContainer = styled.View<ItemContainerProps>`
   flex-direction: row;
   justify-content: space-between;
   background-color: ${({ done }) => (done ? '#333' : '#171717')};
