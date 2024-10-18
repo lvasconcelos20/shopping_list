@@ -1,8 +1,8 @@
 
-import Page from "./felipe/page";
+import Home from "./home";
 
-export default function Home() {
+export default function Page() {
   return (
-    <Page/>
+    <Home/>
   );
 }

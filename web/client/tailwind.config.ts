@@ -56,8 +56,51 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
-  	}
+  		},
+		fontFamily: {
+			inter: ['Inter', 'sans-serif']
+		}
+
+  	},
+	spacing: {
+		'20': '1.667rem',
+		'30': '1.875rem',
+		'35': '2.917rem',
+		'40': '3.333rem',
+		'45': '3.75rem',	
+		'50': '4.167rem',
+		'60': '5rem',
+		'70': '6.25rem',
+		'80': '6.667rem',
+		'88': '7.333rem',
+		'100': '8.333rem',
+		'280': '23.333rem',
+		'326': '26rem',
+		'360': '30rem',
+
+
+	},
+	margin: {
+		'1': '0.083rem',
+		'5': '0.417rem',
+		'8': '0.667rem',
+		'10': '0.833rem',
+		'15': '1.25rem',
+		'20': '1.667rem'
+
+
+	},
+	gap: {
+		'4': '0.333rem',
+		'11': '0.917rem',
+		'12': '1rem',
+		'15': '1.25rem',
+		'20': '1.667rem'
+	},
+	padding:{
+		'4': '0.333rem',
+		'10': '0.833rem'
+	}
   },
   plugins: [require("tailwindcss-animate")],
 };
