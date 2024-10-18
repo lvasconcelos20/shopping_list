@@ -109,7 +109,7 @@ export default function Home() {
               >
                 <SelectTrigger
                   id="unidade-select"
-                  className="peer  h-[40px] text-gray-400 border rounded-md "
+                  className="peer  h-[40px] text-gray-400  rounded-md "
                   style={{
                     border: '1px solid rgba(37, 37, 41, 1)', backgroundColor: 'rgba(23, 23, 26, 1)',
                   }}
