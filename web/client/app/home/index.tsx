@@ -92,7 +92,7 @@ export default function Home() {
                 value={quantidade}
                 onChange={(e) => setQuantidade(Number(e.target.value))}
                 className="w-full h-[40px] border rounded-md text-gray-400"
-                style={{ border: '1px solid rgba(37, 37, 41, 1)', backgroundColor: 'rgba(17, 17, 18, 1)' }}
+                style={{ border: '1px solid rgba(37, 37, 41, 1)', backgroundColor: 'rgba(17, 17, 18, 1)', borderRadius: '6px 0px 0px 6px' }}
               />
               <Label
                 htmlFor="item-input"
@@ -101,7 +101,7 @@ export default function Home() {
                 Quantidade
               </Label>
             </div>
-            <div className="relative w-[80px]">
+            <div className="relative w-[72px]">
               <Select
                 value={unidade_medida}
                 onValueChange={setUnidade} 
@@ -109,15 +109,15 @@ export default function Home() {
               >
                 <SelectTrigger
                   id="unidade-select"
-                  className="peer  h-[40px] text-gray-400  rounded-md "
+                  className=" h-[40px] w-[] text-gray-400  "
                   style={{
-                    border: '1px solid rgba(37, 37, 41, 1)', backgroundColor: 'rgba(23, 23, 26, 1)',
+                    border: '1px solid rgba(37, 37, 41, 1)', backgroundColor: 'rgba(23, 23, 26, 1)', borderRadius: '0px 6px 6px 0px'
                   }}
                 >
                   <SelectValue placeholder="UN." />
                 </SelectTrigger>
-                <SelectContent className="bg-[#17171A] w-full text-gray-400" style={{ minWidth: '80px', marginTop: '2px'}} >
-                  <SelectGroup className=" bg-[#17171A] w-full  text-gray-400 ">
+                <SelectContent className="bg-[#17171A] w-full text-gray-400" style={{ marginTop: '2px' }} >
+                  <SelectGroup className=" bg-[#17171A] w-full   text-gray-400 ">
                     <SelectItem value="Un">Un.</SelectItem>
                     <SelectItem value="L">L</SelectItem>
                     <SelectItem value="Kg">Kg</SelectItem>
