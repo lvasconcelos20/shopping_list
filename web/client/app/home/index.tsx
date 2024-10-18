@@ -25,7 +25,7 @@ export default function Home() {
   const items = [
     { name: 'Maçã', quantity: '2 unidades', type: 'padaria'},
     { name: 'Pão francês', quantity: '4 unidades', type: 'legume'},
-    { name: 'Pão francês', quantity: '4 unidades', type: 'legume' as 'legume'},
+    { name: 'Pão francês', quantity: '4 unidades', type: 'bebida'},
   ];
 
   return (
