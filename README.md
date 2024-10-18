@@ -34,10 +34,10 @@ Este projeto visa [breve descrição do objetivo do projeto]. A seguir, estão d
 - **TS-Node-Dev**: Ferramenta para desenvolvimento com TypeScript que permite recarregar automaticamente o servidor durante alterações no código.
 - **@Types**: Tipos utilizados para integração com TypeScript em bibliotecas que não possuem suporte nativo à tipagem, como `@types/express` e `@types/cookie-parser`.
 
-### DevOps e Segurança
+### DevOps, Segurança e Deploy
 - **Dotenv**: Utilizado para carregar variáveis de ambiente a partir de um arquivo `.env`, permitindo manter informações sensíveis fora do código-fonte.
 - **Node Package Manager (NPM) / Yarn**: Gerenciadores de pacotes para instalar e gerenciar as dependências do projeto.
-
+- **Vercel**: deploy da aplicação - https://shopping-list-git-mobile-lvasconcelos20s-projects.vercel.app/
 ## Instalação
 1. Clone o repositório:
    ```bash
