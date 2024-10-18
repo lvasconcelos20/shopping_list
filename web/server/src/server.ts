@@ -1,10 +1,15 @@
-import "dotenv/config";
+import dotenv from 'dotenv';
+dotenv.config(); // Carrega as variáveis do .env
 
-import app from "@app";
-import "@database";
+import express from 'express';
+import listRouter from './routes/ListRoutes';
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(
-    `🚀 Server running on http://localhost:${process.env.SERVER_PORT}`
-  );
+const app = express();
+const PORT = process.env.SERVER_PORT || 3003;
+
+app.use(express.json());
+app.use('/list', listRouter);
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server ready at http://localhost:${PORT}`);
 });

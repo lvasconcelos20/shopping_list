@@ -1,11 +1,13 @@
-import { Router } from "express";
-import userRouter from "./userRoutes";
+import { Router } from 'express';
+
+import ListRouter from './ListRoutes';
 
 const router = Router();
 
-router.use("/users", userRouter);
-router.get("/", (_, res) => {
-  res.status(200).send("made by ausikek :>");
+router.use('/list', ListRouter);
+
+router.route('/').get((_, res) => {
+  res.status(200).send('Rodando');
 });
 
 export default router;
