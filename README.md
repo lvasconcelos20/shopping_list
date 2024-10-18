@@ -1,7 +1,7 @@
 # Projeto: [Nome do Projeto]
 
 ## Descrição
-Este projeto visa [breve descrição do objetivo do projeto]. A seguir, estão detalhadas as principais tecnologias e bibliotecas utilizadas durante o desenvolvimento.
+Este projeto visa a implentação de uma aplicação web e mobile de uma lista de compras. A seguir, estão detalhadas as principais tecnologias e bibliotecas utilizadas durante o desenvolvimento.
 
 ## Tecnologias Utilizadas
 
