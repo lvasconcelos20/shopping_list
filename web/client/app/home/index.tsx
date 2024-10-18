@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Tag } from '@/components/tag'
+import { Sandwich } from 'lucide-react';
 import { Background } from '../assets'
 import { Label } from '@radix-ui/react-label'
 import { Input } from '@/components/ui/input'
@@ -22,8 +23,9 @@ import {
 
 export default function Home() {
   const items = [
-    { name: 'Maçã', quantity: '2 unidades', category: 'fruta', icon: '🍎', color: 'bg-red-500' },
-    { name: 'Pão francês', quantity: '4 unidades', category: 'padaria', icon: '🥖', color: 'bg-yellow-500' },
+    { name: 'Maçã', quantity: '2 unidades', type: 'padaria'},
+    { name: 'Pão francês', quantity: '4 unidades', type: 'legume'},
+    { name: 'Pão francês', quantity: '4 unidades', type: 'legume' as 'legume'},
   ];
 
   return (
@@ -101,28 +103,28 @@ export default function Home() {
         </form>
 
         {/* Lista de Itens */}
-        <ul className="mt-[40px] flex flex-col gap-15">
+        <ul className="mt-[40px] flex flex-col gap-11">
           {items.map((item, index) => (
             <li
               key={index}
-              className="flex items-center justify-between bg-[#171717] h-[60px] rounded-lg shadow p-4"
+              className="flex items-center justify-between bg-[#171717] h-[60px] rounded-lg "
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center">
                 <Checkbox style={{ color: 'rgba(168, 129, 230, 1)' }} />
-                <div>
+                <span>
                   <h3 className="text-white font-bold">{item.name}</h3>
                   <p className="text-xs text-gray-400">{item.quantity}</p>
-              
-
-                </div>
+                </span>
               </div>
-              <span className={`text-lg ${item.color}  rounded-full`}>
-                {item.icon}
-              </span>
-              <button>
-                <MoreVertIcon style={{color: 'rgba(168, 129, 230, 1)'}} />
-              </button>
-              
+             
+              <div className="flex justify-center items-center " >
+                  <Tag label={item.type} type={item.type} />
+                  <button>
+                    <MoreVertIcon style={{ color: 'rgba(168, 129, 230, 1)' }} />
+                  </button>                      
+               </div>
+
+             
             </li>
           ))}
         </ul>
