@@ -6,6 +6,7 @@ export interface List {
     name: string;
     quantidade: number;
     categoria: string;
+    unidade_medida: string;
 }
 
 

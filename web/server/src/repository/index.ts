@@ -1,3 +1,3 @@
-import ListRepository from "./listRepository";
+import ListRepository from "./ListRepository";
 
 export {ListRepository};
