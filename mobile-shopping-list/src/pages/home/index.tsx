@@ -48,7 +48,7 @@ export default function Home() {
     <Container>
       <Header>
         <BackgroundImage source={require('../../assets/background.png')} />
-        <Title>Lista de Compras</Title>
+        <Title >Lista de Compras</Title>
       </Header>
       <Form>
         <StyledInput
@@ -56,7 +56,7 @@ export default function Home() {
           value={name}
           onChangeText={setName}
           placeholderTextColor="#555"
-          style={{ width: 340, height: 40, marginBottom: 10, borderRadius: 6 }}
+          style={{ width: 380, height: 40, marginBottom: 10, borderRadius: 6 }}
         />
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -90,7 +90,7 @@ export default function Home() {
               <SelectText>{unidade_medida}</SelectText>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 50 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 80 }}>
             <TouchableOpacity
               onPress={() => setCategoriaModalVisible(true)}
               style={{
@@ -105,7 +105,7 @@ export default function Home() {
               <SelectText>{categoria || 'Categoria'}</SelectText>
             </TouchableOpacity>
             <AddButton onPress={handleCreateList}>
-              <Text style={{ color: '#fff', fontSize: 20 }}>+</Text>
+              <Text style={{ color: '#fff', fontSize: 20}}>+</Text>
             </AddButton>
           </View>
         </View>

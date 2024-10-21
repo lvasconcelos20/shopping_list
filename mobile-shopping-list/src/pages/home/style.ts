@@ -8,8 +8,6 @@ interface ItemContainerProps {
 
 export const Container = styled.View`
   display: flex;
-  width: 100%;
-  height: 100%;
   background-color: #0c0c0d;
   align-items: center;
 
@@ -19,7 +17,7 @@ export const Header = styled.View`
   display: flex;
   width: 428px;
   height: 182px;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 `;
 
@@ -32,17 +30,16 @@ export const BackgroundImage = styled.Image`
 export const Title = styled.Text`
   color: #fff;
   font-size: 24px;
+  margin-top: 20px;
   font-weight: bold;
-  width: 380px;
-  height: 24px;
+  left: 24px;
 `;
 
 export const Form = styled.View`
-  position:row;
   display: flex;
   width: 100%;
-  gap: 10px;
-  padding: 10px 0;
+  gap: 20px;
+  margin-top: -30px;
   align-items: center;
   justify-content: space-around;
 
@@ -71,6 +68,7 @@ export const SelectText = styled.Text`
 export const AddButton = styled.TouchableOpacity`
   width: 40px;
   height: 40px;
+  margin-left: 12px;
   background-color: rgba(116, 80, 172, 1);
   align-items: center;
   justify-content: center;
