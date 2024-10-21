@@ -79,6 +79,7 @@ export const ItemContainer = styled.View<ItemContainerProps>`
   flex-direction: row;
   justify-content: space-between;
   background-color: ${({ done }) => (done ? '#333' : '#171717')};
+  margin-top: 20px;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;

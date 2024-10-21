@@ -18,7 +18,7 @@ import { useList } from '../../hooks/useList';
 export default function Home() {
   const { tasks, addTask, removeTask, toggleTaskDone } = useList();
   const [name, setName] = useState('');
-  const [quantidade, setQuantidade] = useState('1'); // Armazenado como string para facilitar a entrada do usuário
+  const [quantidade, setQuantidade] = useState('1');
   const [unidade_medida, setUnidade] = useState('Un');
   const [categoria, setCategoria] = useState('');
   const [unidadeModalVisible, setUnidadeModalVisible] = useState(false);
@@ -28,7 +28,7 @@ export default function Home() {
     if (name && categoria && unidade_medida) {
       addTask({
         name,
-        quantidade: parseInt(quantidade), // Converte para número antes de adicionar
+        quantidade: parseInt(quantidade), 
         categoria,
         unidade_medida,
         done: false,
@@ -40,9 +40,18 @@ export default function Home() {
     }
   };
 
-  function getUnidadeLabel(unidade_medida: string): React.ReactNode {
-    throw new Error('Function not implemented.');
-  }
+  const getUnidadeLabel = (unidade_medida: string) => {
+    switch (unidade_medida) {
+      case 'Un':
+        return 'unidade(s)';
+      case 'L':
+        return 'litro(s)';
+      case 'kg':
+        return 'Kg';
+      default:
+        return 'Kg';
+    }
+  };
 
   return (
     <Container>
@@ -104,7 +113,7 @@ export default function Home() {
             >
               <SelectText>{categoria || 'Categoria'}</SelectText>
             </TouchableOpacity>
-            <AddButton onPress={handleCreateList}>
+            <AddButton onPress={handleCreateList} >
               <Text style={{ color: '#fff', fontSize: 20}}>+</Text>
             </AddButton>
           </View>
@@ -174,7 +183,7 @@ export default function Home() {
                 {item.name} - {item.quantidade} {getUnidadeLabel(item.unidade_medida)}
               </Text>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', }}>
               <Tag label={item.categoria} type={item.categoria} done={item.done} />
               <TouchableOpacity onPress={() => removeTask(item.id)}>
                 <Text style={{ color: 'rgba(168, 129, 230, 1)' }}>Delete</Text>

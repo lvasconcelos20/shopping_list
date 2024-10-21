@@ -11,8 +11,8 @@ export const useListActions = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('http://localhost:3003/list', data);
-      return response.data; // Retorna a lista criada (incluindo o `id` gerado)
+      const response = await axios.post('http://192.168.1.3:3003/list', data);
+      return response.data; 
     } catch (error) {
       setError('Erro ao criar a lista. Tente novamente.');
       console.error("Erro ao criar a lista:", error);
@@ -27,7 +27,7 @@ export const useListActions = () => {
     setLoading(true);
     setError(null);
     try {
-      await axios.delete(`http://localhost:3003/list/${id}`);
+      await axios.delete(`http://192.168.1.3:3003/list/${id}`);
       return true; // Indica que a exclusão foi bem-sucedida
     } catch (error) {
       setError('Erro ao deletar a lista.');
