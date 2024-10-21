@@ -14,6 +14,8 @@ import {
   ItemContainer,
 } from './style';
 import { useList } from '../../hooks/useList';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 export default function Home() {
   const { tasks, addTask, removeTask, toggleTaskDone } = useList();
@@ -60,15 +62,21 @@ export default function Home() {
         <Title >Lista de Compras</Title>
       </Header>
       <Form>
-        <StyledInput
-          placeholder="Item"
-          value={name}
-          onChangeText={setName}
-          placeholderTextColor="#555"
-          style={{ width: 380, height: 40, marginBottom: 10, borderRadius: 6 }}
-        />
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row'}}>
+          <View style={{flexDirection: 'column'}}>
+            <Text style={{ color: 'rgba(175, 171, 182, 1)', marginBottom: 4 }}>Item</Text>
+              <StyledInput
+                placeholder="Item"
+                value={name}
+                onChangeText={setName}
+                placeholderTextColor="#555"
+                style={{ width: 380, height: 40, marginBottom: 10, borderRadius: 6 }}
+              />
+          </View>
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ flexDirection: 'column', alignItems: 'flex-start'}}>
+            <Text style={{ color: 'rgba(175, 171, 182, 1)', marginBottom: 4 }}>Quantidade</Text>
             <StyledInput
               placeholder="Quantidade"
               value={quantidade}
@@ -84,11 +92,15 @@ export default function Home() {
                 borderBottomLeftRadius: 6,
               }}
             />
+          </View>
+          <View style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
             <TouchableOpacity
               onPress={() => setUnidadeModalVisible(true)}
               style={{
                 width: 72,
+                marginTop: 24,
                 height: 40,
+                right: 6,
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: 'rgba(23, 23, 26, 1)',
@@ -99,7 +111,7 @@ export default function Home() {
               <SelectText>{unidade_medida}</SelectText>
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 80 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 80, marginTop: 20 }}>
             <TouchableOpacity
               onPress={() => setCategoriaModalVisible(true)}
               style={{
@@ -109,6 +121,7 @@ export default function Home() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: 6,
+
               }}
             >
               <SelectText>{categoria || 'Categoria'}</SelectText>
@@ -172,7 +185,7 @@ export default function Home() {
         data={tasks}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <ItemContainer done={item.done}>
+          <ItemContainer done={item.done} style={{  paddingVertical: 8, paddingHorizontal: 12 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Checkbox
                 value={item.done}
@@ -183,10 +196,10 @@ export default function Home() {
                 {item.name} - {item.quantidade} {getUnidadeLabel(item.unidade_medida)}
               </Text>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-              <Tag label={item.categoria} type={item.categoria} done={item.done} />
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Tag label={item.categoria} type={item.categoria.toLowerCase()} done={item.done} />
               <TouchableOpacity onPress={() => removeTask(item.id)}>
-                <Text style={{ color: 'rgba(168, 129, 230, 1)' }}>Delete</Text>
+                <Icon name="trash-can" size={20} color="rgba(168, 129, 230, 1)" />
               </TouchableOpacity>
             </View>
           </ItemContainer>

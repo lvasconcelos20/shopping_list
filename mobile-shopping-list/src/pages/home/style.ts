@@ -39,7 +39,7 @@ export const Form = styled.View`
   display: flex;
   width: 100%;
   gap: 20px;
-  margin-top: -30px;
+  margin-top: -45px;
   align-items: center;
   justify-content: space-around;
 
@@ -79,8 +79,9 @@ export const ItemContainer = styled.View<ItemContainerProps>`
   flex-direction: row;
   justify-content: space-between;
   background-color: ${({ done }) => (done ? '#333' : '#171717')};
-  margin-top: 20px;
-  padding: 10px;
+  width: 380px;
+  margin-top: 30px;
+  height: 60px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  
 `;
